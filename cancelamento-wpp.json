@@ -1,0 +1,161 @@
+{
+  "name": "cancelamento-wpp",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "e5d6e6df-bf97-4f9f-ac03-83e9d58a2c28",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -304,
+        48
+      ],
+      "id": "261af253-6806-4ce9-a88f-06b7ed6e7002",
+      "name": "If1"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "calendar": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        -96,
+        -48
+      ],
+      "id": "b78973c5-9696-4b91-b447-65357b3ace1a",
+      "name": "Delete an event"
+    },
+    {
+      "parameters": {
+        "resource": "spreadsheet",
+        "operation": "deleteSpreadsheet",
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        112,
+        -48
+      ],
+      "id": "ba22b6b6-8aba-4671-a01d-b8553295fd35",
+      "name": "Delete spreadsheet"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        320,
+        -48
+      ],
+      "id": "f682ad91-f334-432c-87bc-ab8a59872681",
+      "name": "HTTP Request3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -96,
+        144
+      ],
+      "id": "f829326b-b48e-43b7-b731-42913dfe8d78",
+      "name": "HTTP Request4"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Delete an event",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "HTTP Request4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete an event": {
+      "main": [
+        [
+          {
+            "node": "Delete spreadsheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete spreadsheet": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request4": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "6edda778-7f8d-4e49-a48c-f34360846f72",
+  "meta": {
+    "instanceId": "e71406b67a7856d253e1e495c544d370ff8f27eef9c61e3b0f928514d97d2a3c"
+  },
+  "id": "I8Dn9Xaraw8IxrvG",
+  "tags": []
+}
