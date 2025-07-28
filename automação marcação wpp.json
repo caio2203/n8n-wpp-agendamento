@@ -190,8 +190,8 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1232,
-        320
+        1056,
+        352
       ],
       "id": "961eaee0-5ad8-44d5-a1b0-d42dcf5b3c79",
       "name": "HTTP Request"
@@ -237,7 +237,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1584,
+        1568,
         272
       ],
       "id": "59c59574-0e6c-4bf6-b76d-794c8085d981",
@@ -345,14 +345,77 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1808,
-        96
+        1856,
+        64
       ],
       "id": "6489077e-b061-4c62-a705-0abed0876d3b",
       "name": "agendamento1"
     },
     {
       "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1328,
+        336
+      ],
+      "id": "6e67f176-2eb1-4bcd-bfc7-ffc601aa6b43",
+      "name": "Get row(s) in sheet"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1552,
+        464
+      ],
+      "id": "4d76cd3d-2852-4a17-ac91-124d50951e7f",
+      "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "I8Dn9Xaraw8IxrvG",
+          "mode": "list",
+          "cachedResultName": "cancelamento-wpp"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1744,
+        256
+      ],
+      "id": "6c62b784-3306-4483-b1a0-e4cb35b84dc3",
+      "name": "cancelameto2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
@@ -362,18 +425,30 @@
         288
       ],
       "id": "c55318c5-2cdc-44cc-a732-127dfaa18ee2",
-      "name": "Google Gemini Chat Model"
+      "name": "gemini 2.0 flash",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "kNpXKAx4RLWnuASM",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
     },
     {
       "parameters": {},
       "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
       "typeVersion": 1.5,
       "position": [
-        400,
-        224
+        432,
+        288
       ],
       "id": "af6f1f99-54ef-47cd-a899-d676c4c9b385",
-      "name": "Redis Chat Memory"
+      "name": "reddis db chat memory",
+      "credentials": {
+        "redis": {
+          "id": "A4JzZ3L2MdEQJONz",
+          "name": "Redis account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -434,7 +509,13 @@
             "index": 0
           }
         ],
-        [],
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
         [
           {
             "node": "HTTP Request",
@@ -473,7 +554,18 @@
         ]
       ]
     },
-    "Google Gemini Chat Model": {
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "gemini 2.0 flash": {
       "ai_languageModel": [
         [
           {
@@ -484,7 +576,7 @@
         ]
       ]
     },
-    "Redis Chat Memory": {
+    "reddis db chat memory": {
       "ai_memory": [
         [
           {
