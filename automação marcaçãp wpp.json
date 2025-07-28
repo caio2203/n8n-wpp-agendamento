@@ -1,5 +1,5 @@
 {
-  "name": "My workflow 2",
+  "name": "automação marcaçãp wpp",
   "nodes": [
     {
       "parameters": {
@@ -9,10 +9,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        -1424,
-        320
+        0,
+        0
       ],
-      "id": "f4fe0024-5074-414a-a684-8429a7fbaf29",
+      "id": "07883d2a-9c3b-4058-83d5-9915322b9e3c",
       "name": "Webhook",
       "webhookId": "fc159bbd-34b7-47d6-8893-2c76be370f3e"
     },
@@ -23,10 +23,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.1,
       "position": [
-        -1152,
-        320
+        272,
+        0
       ],
-      "id": "38b3878b-4577-4279-8d40-b10dafcad31c",
+      "id": "1faa2349-5f8f-4c05-b282-ebc67884c91d",
       "name": "AI Agent"
     },
     {
@@ -36,10 +36,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -736,
-        320
+        688,
+        0
       ],
-      "id": "334e6ba4-ed15-4ffc-8940-5bcbeba2c4a9",
+      "id": "2599aabb-3ea8-4d36-8eca-b68d21219192",
       "name": "Edit Fields"
     },
     {
@@ -177,10 +177,10 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -400,
-        272
+        1024,
+        -48
       ],
-      "id": "e278c4e1-07b6-41fb-aa14-30ec1eb7a0bb",
+      "id": "bc4ebd67-2afe-4b48-a508-56c1a11548bf",
       "name": "Switch"
     },
     {
@@ -190,10 +190,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -176,
-        1104
+        1056,
+        352
       ],
-      "id": "914bc209-3e19-47ab-a97c-8b9b68592b9f",
+      "id": "961eaee0-5ad8-44d5-a1b0-d42dcf5b3c79",
       "name": "HTTP Request"
     },
     {
@@ -224,10 +224,10 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -112,
-        432
+        1312,
+        112
       ],
-      "id": "2ed5cf34-d6b7-4123-835c-600b2757fe8f",
+      "id": "82aa7cba-d156-4d49-b394-0e3fcde60e98",
       "name": "If2"
     },
     {
@@ -237,10 +237,10 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        160,
-        592
+        1568,
+        272
       ],
-      "id": "4a7ade42-eefc-49c9-ad0f-6b824111cffe",
+      "id": "59c59574-0e6c-4bf6-b76d-794c8085d981",
       "name": "HTTP Request5"
     },
     {
@@ -264,10 +264,10 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        144,
-        192
+        1568,
+        -128
       ],
-      "id": "d2de9af0-f294-4cfc-ac9b-2bae11ab27b7",
+      "id": "e76f6385-ee3f-405e-bb80-4792e400d7e0",
       "name": "cancelameto"
     },
     {
@@ -291,10 +291,10 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        0,
-        0
+        1424,
+        -320
       ],
-      "id": "87914fbf-0aa8-45e5-9831-d716b9f49b5b",
+      "id": "e3ffd3e7-3c7a-4a8e-845d-0a584bb177a3",
       "name": "agendamento"
     },
     {
@@ -318,10 +318,10 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        160,
-        416
+        1584,
+        96
       ],
-      "id": "d014fd1f-77e0-4aac-bbbd-3702977ee438",
+      "id": "e500d0ce-dcb7-42c3-b0d9-fe125283c91a",
       "name": "cancelameto1"
     },
     {
@@ -345,48 +345,11 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        384,
-        416
+        1856,
+        64
       ],
-      "id": "b3e49717-ce16-4d75-a1e5-b5bf5d43e2be",
+      "id": "6489077e-b061-4c62-a705-0abed0876d3b",
       "name": "agendamento1"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
-      "typeVersion": 1,
-      "position": [
-        -1152,
-        608
-      ],
-      "id": "2e99cbfd-14e5-4806-9159-736b0f55da12",
-      "name": "Google Gemini Chat Model"
-    },
-    {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
-      "typeVersion": 1.5,
-      "position": [
-        -1024,
-        544
-      ],
-      "id": "cfcb29b7-9859-419f-b63d-4594cfd1b46b",
-      "name": "Redis Chat Memory"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.2,
-      "position": [
-        176,
-        695.0469136313201
-      ],
-      "id": "f680cf98-d301-42d9-b260-0b0ef075c500",
-      "name": "Execute Workflow"
     },
     {
       "parameters": {
@@ -404,10 +367,10 @@
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.6,
       "position": [
-        -128,
-        848
+        1328,
+        336
       ],
-      "id": "765d6cc2-b973-41ae-b469-cd04e94ac577",
+      "id": "6e67f176-2eb1-4bcd-bfc7-ffc601aa6b43",
       "name": "Get row(s) in sheet"
     },
     {
@@ -417,11 +380,75 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        128,
-        896
+        1552,
+        464
       ],
-      "id": "cdc70587-a83f-44b4-bf30-108661d18478",
+      "id": "4d76cd3d-2852-4a17-ac91-124d50951e7f",
       "name": "HTTP Request1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "I8Dn9Xaraw8IxrvG",
+          "mode": "list",
+          "cachedResultName": "cancelamento-wpp"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        1744,
+        256
+      ],
+      "id": "6c62b784-3306-4483-b1a0-e4cb35b84dc3",
+      "name": "cancelameto2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        272,
+        288
+      ],
+      "id": "c55318c5-2cdc-44cc-a732-127dfaa18ee2",
+      "name": "gemini 2.0 flash",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "kNpXKAx4RLWnuASM",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [
+        432,
+        288
+      ],
+      "id": "af6f1f99-54ef-47cd-a899-d676c4c9b385",
+      "name": "reddis db chat memory",
+      "credentials": {
+        "redis": {
+          "id": "A4JzZ3L2MdEQJONz",
+          "name": "Redis account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -527,28 +554,6 @@
         ]
       ]
     },
-    "Google Gemini Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Redis Chat Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_memory",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Get row(s) in sheet": {
       "main": [
         [
@@ -559,16 +564,39 @@
           }
         ]
       ]
+    },
+    "gemini 2.0 flash": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "reddis db chat memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "56f5a113-f64f-4098-9de5-0e6e94358f7b",
+  "versionId": "c4f00eeb-cd01-4bd2-8ace-440995b4a90b",
   "meta": {
-    "instanceId": "74b5245f7d86594f7dc4551759b3d6fe78b843b3d690f664afd49a34e5687173"
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e71406b67a7856d253e1e495c544d370ff8f27eef9c61e3b0f928514d97d2a3c"
   },
-  "id": "zaTdZr6W4Y3fTzg9",
+  "id": "eaDkps79eJnQHuJb",
   "tags": []
 }
