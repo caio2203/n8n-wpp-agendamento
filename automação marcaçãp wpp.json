@@ -1,5 +1,5 @@
 {
-  "name": "automação marcaçãp wpp",
+  "name": "automação marcação wpp",
   "nodes": [
     {
       "parameters": {
@@ -9,8 +9,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
-        0
+        336,
+        560
       ],
       "id": "07883d2a-9c3b-4058-83d5-9915322b9e3c",
       "name": "Webhook",
@@ -23,24 +23,11 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 2.1,
       "position": [
-        272,
-        0
+        896,
+        560
       ],
       "id": "1faa2349-5f8f-4c05-b282-ebc67884c91d",
       "name": "AI Agent"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        688,
-        0
-      ],
-      "id": "2599aabb-3ea8-4d36-8eca-b68d21219192",
-      "name": "Edit Fields"
     },
     {
       "parameters": {
@@ -177,24 +164,11 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1024,
-        -48
+        1648,
+        512
       ],
       "id": "bc4ebd67-2afe-4b48-a508-56c1a11548bf",
       "name": "Switch"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1056,
-        352
-      ],
-      "id": "961eaee0-5ad8-44d5-a1b0-d42dcf5b3c79",
-      "name": "HTTP Request"
     },
     {
       "parameters": {
@@ -224,51 +198,11 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1312,
-        112
+        1936,
+        688
       ],
       "id": "82aa7cba-d156-4d49-b394-0e3fcde60e98",
       "name": "If2"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
-      "position": [
-        1568,
-        272
-      ],
-      "id": "59c59574-0e6c-4bf6-b76d-794c8085d981",
-      "name": "HTTP Request5"
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "I8Dn9Xaraw8IxrvG",
-          "mode": "list",
-          "cachedResultName": "cancelamento-wpp"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {},
-          "matchingColumns": [],
-          "schema": [],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.2,
-      "position": [
-        1568,
-        -128
-      ],
-      "id": "e76f6385-ee3f-405e-bb80-4792e400d7e0",
-      "name": "cancelameto"
     },
     {
       "parameters": {
@@ -291,8 +225,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1424,
-        -320
+        2048,
+        256
       ],
       "id": "e3ffd3e7-3c7a-4a8e-845d-0a584bb177a3",
       "name": "agendamento"
@@ -318,8 +252,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1584,
-        96
+        2192,
+        656
       ],
       "id": "e500d0ce-dcb7-42c3-b0d9-fe125283c91a",
       "name": "cancelameto1"
@@ -345,46 +279,48 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1856,
-        64
+        2480,
+        640
       ],
       "id": "6489077e-b061-4c62-a705-0abed0876d3b",
       "name": "agendamento1"
     },
     {
       "parameters": {
-        "documentId": {
-          "__rl": true,
-          "mode": "list",
-          "value": ""
-        },
-        "sheetName": {
-          "__rl": true,
-          "mode": "list",
-          "value": ""
-        }
-      },
-      "type": "n8n-nodes-base.googleSheets",
-      "typeVersion": 4.6,
-      "position": [
-        1328,
-        336
-      ],
-      "id": "6e67f176-2eb1-4bcd-bfc7-ffc601aa6b43",
-      "name": "Get row(s) in sheet"
-    },
-    {
-      "parameters": {
+        "modelName": "models/gemini-2.0-flash",
         "options": {}
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.2,
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
       "position": [
-        1552,
-        464
+        896,
+        864
       ],
-      "id": "4d76cd3d-2852-4a17-ac91-124d50951e7f",
-      "name": "HTTP Request1"
+      "id": "c55318c5-2cdc-44cc-a732-127dfaa18ee2",
+      "name": "gemini 2.0 flash",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "kNpXKAx4RLWnuASM",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "typeVersion": 1.5,
+      "position": [
+        1024,
+        864
+      ],
+      "id": "af6f1f99-54ef-47cd-a899-d676c4c9b385",
+      "name": "reddis db chat memory",
+      "credentials": {
+        "redis": {
+          "id": "A4JzZ3L2MdEQJONz",
+          "name": "Redis account"
+        }
+      }
     },
     {
       "parameters": {
@@ -407,48 +343,144 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.2,
       "position": [
-        1744,
-        256
+        2192,
+        448
       ],
-      "id": "6c62b784-3306-4483-b1a0-e4cb35b84dc3",
-      "name": "cancelameto2"
+      "id": "e76f6385-ee3f-405e-bb80-4792e400d7e0",
+      "name": "cancelameto"
     },
     {
       "parameters": {
-        "modelName": "models/gemini-2.0-flash",
-        "options": {}
+        "content": "conectar a evolution api aqui",
+        "color": 5
       },
-      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "type": "n8n-nodes-base.stickyNote",
       "typeVersion": 1,
       "position": [
-        272,
-        288
+        560,
+        544
       ],
-      "id": "c55318c5-2cdc-44cc-a732-127dfaa18ee2",
-      "name": "gemini 2.0 flash",
-      "credentials": {
-        "googlePalmApi": {
-          "id": "kNpXKAx4RLWnuASM",
-          "name": "Google Gemini(PaLM) Api account"
-        }
-      }
+      "id": "76c97241-f38e-4f98-bb8d-59043175de0b",
+      "name": "Sticky Note"
     },
     {
-      "parameters": {},
-      "type": "@n8n/n8n-nodes-langchain.memoryRedisChat",
-      "typeVersion": 1.5,
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "bfc4377c-7cd8-41d5-b056-043934b4a28e",
+              "name": "=telefone",
+              "value": "={{$json[\"body\"][\"telefone\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "9a2ffb14-5a66-45f1-874f-127f28b433dd",
+              "name": "nome",
+              "value": "={{$json[\"body\"][\"nome\"]}}",
+              "type": "string"
+            },
+            {
+              "id": "a4aabd64-9bc8-469c-b736-33edc03d647c",
+              "name": "intenção",
+              "value": "={{$node[\"AI Agent\"].json[\"intencao\"]}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
       "position": [
-        432,
-        288
+        1312,
+        560
       ],
-      "id": "af6f1f99-54ef-47cd-a899-d676c4c9b385",
-      "name": "reddis db chat memory",
-      "credentials": {
-        "redis": {
-          "id": "A4JzZ3L2MdEQJONz",
-          "name": "Redis account"
+      "id": "2599aabb-3ea8-4d36-8eca-b68d21219192",
+      "name": "saídas mensagem json"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1680,
+        928
+      ],
+      "id": "961eaee0-5ad8-44d5-a1b0-d42dcf5b3c79",
+      "name": "mensagem padrão"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2176,
+        1040
+      ],
+      "id": "4d76cd3d-2852-4a17-ac91-124d50951e7f",
+      "name": "confirmação tira-dúvidas"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2192,
+        848
+      ],
+      "id": "59c59574-0e6c-4bf6-b76d-794c8085d981",
+      "name": "erro na remarcação"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
         }
-      }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        1952,
+        912
+      ],
+      "id": "6e67f176-2eb1-4bcd-bfc7-ffc601aa6b43",
+      "name": "Get row(s) in sheet"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.6,
+      "position": [
+        1088,
+        1008
+      ],
+      "id": "834f630f-f515-40ed-bf1f-8615b7d0aba6",
+      "name": "Credenciais clientes"
     }
   ],
   "pinData": {},
@@ -468,18 +500,7 @@
       "main": [
         [
           {
-            "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Edit Fields": {
-      "main": [
-        [
-          {
-            "node": "Switch",
+            "node": "saídas mensagem json",
             "type": "main",
             "index": 0
           }
@@ -518,7 +539,7 @@
         ],
         [
           {
-            "node": "HTTP Request",
+            "node": "mensagem padrão",
             "type": "main",
             "index": 0
           }
@@ -536,7 +557,7 @@
         ],
         [
           {
-            "node": "HTTP Request5",
+            "node": "erro na remarcação",
             "type": "main",
             "index": 0
           }
@@ -548,17 +569,6 @@
         [
           {
             "node": "agendamento1",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Get row(s) in sheet": {
-      "main": [
-        [
-          {
-            "node": "HTTP Request1",
             "type": "main",
             "index": 0
           }
@@ -586,13 +596,46 @@
           }
         ]
       ]
+    },
+    "saídas mensagem json": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "confirmação tira-dúvidas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Credenciais clientes": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "c4f00eeb-cd01-4bd2-8ace-440995b4a90b",
+  "versionId": "acf9a6a5-e246-49c2-8121-96b96c567ea7",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "e71406b67a7856d253e1e495c544d370ff8f27eef9c61e3b0f928514d97d2a3c"
